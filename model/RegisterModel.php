@@ -9,9 +9,7 @@ function Checker($firstname, $prefire, $lastname, $email, $username, $password) 
      	':username' => $username
      	));
 
-     // setFetch($querySelect);
      $count = $querySelect->rowCount();
-     var_dump($count);
      if ($count < 0) {
      	echo "Nothing has been found";
      } elseif ($count == 1) {
