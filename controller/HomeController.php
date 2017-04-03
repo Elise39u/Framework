@@ -16,3 +16,7 @@ if (isset($_POST['submit'])) {
 	$password = $_POST['password'];
 	Checker($firstname, $prefire, $lastname, $email, $username, $password);
 }
+
+function start() {
+	render("home/start");
+}

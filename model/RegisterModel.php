@@ -9,13 +9,16 @@ function Checker($firstname, $prefire, $lastname, $email, $username, $password) 
      	':username' => $username
      	));
 
+     // Check if the user already exists
      $count = $querySelect->rowCount();
      if ($count < 0) {
      	echo "Nothing has been found";
+          Register($firstname, $prefire, $lastname, $email, $username, $password);
      } elseif ($count == 1) {
 
      } else {
-     	Register($firstname, $prefire, $lastname, $email, $username, $password);
+     	echo "You already exists";
+          header("Location:" . URL . "home/start");
      }
 
    	$db = null;
@@ -23,6 +26,8 @@ function Checker($firstname, $prefire, $lastname, $email, $username, $password) 
 
 function Register($firstname, $prefire, $lastname, $email, $username, $password) { 
 	$db = openDatabaseConnection();
+     // Turn password into a encryptie 
+     $password = password_hash($password, PASSWORD_BCRYPT);
      $sql = "INSERT INTO user(firstname, prefire, lastname, email, username, password) VALUES(:firstname, :prefire, :lastname, :email, :username, :password)";
      $query = $db->prepare($sql);
      $query->execute(array(

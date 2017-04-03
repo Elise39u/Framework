@@ -1,8 +1,3 @@
-<head>
-  <title> Play a game ? </title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-
 <div class="plaatje">
 <h1> Do you dare </h1>
   <p> Do you dare to enter a world of the unkown <br>
