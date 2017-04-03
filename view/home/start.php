@@ -29,7 +29,7 @@
     <img src="<?= URL ?>img/woonkamer.png">
 
     <ul>
-        <li><a href="#"> Log out</a> </li>
+        <li><a href="<?= URL ?>home/index"> Log out</a> </li>
         <li><a href="#"> Garden </a> </li>
         <li><a href="#"> Bedroom </a> </li>
         <li><a href="#"> Kichten </a> </li>
