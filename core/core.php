@@ -17,7 +17,7 @@ function render($filename, $data = null)
 		foreach($data as $key => $value) {
 			$$key = $value;
 		}
-	} 
+	}
 
 	require(ROOT . 'view/templates/header.php');
 	require(ROOT . 'view/' . $filename . '.php');

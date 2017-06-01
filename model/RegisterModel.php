@@ -15,10 +15,11 @@ function Checker($firstname, $prefire, $lastname, $email, $username, $password) 
      	echo "Nothing has been found";
           Register($firstname, $prefire, $lastname, $email, $username, $password);
      } elseif ($count == 1) {
-
+         $_SESSION['username'] = $username;
      } else {
      	echo "You already exists";
           header("Location:" . URL . "home/start");
+         $_SESSION['username'] = $username;
      }
 
    	$db = null;
@@ -38,6 +39,6 @@ function Register($firstname, $prefire, $lastname, $email, $username, $password)
 		':username' => $username,
 		':password' => $password
 		));
-
+    $_SESSION['username'] = $username;
 	$db = null;
 }

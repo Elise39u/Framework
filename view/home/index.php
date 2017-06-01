@@ -1,4 +1,3 @@
-<div class="plaatje">
 <h1> Do you dare </h1>
   <p> Do you dare to enter a world of the unkown <br>
   Not knowing what you wil see or encounter <br>
@@ -18,4 +17,3 @@
   <input type="text" name="password"><br>
   <input type="submit" name="submit" value="Register">
   </form>
-</div>

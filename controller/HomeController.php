@@ -20,3 +20,8 @@ if (isset($_POST['submit'])) {
 function start() {
 	render("home/start");
 }
+
+function logout() {
+    session_destroy();
+    render('home/index');
+}
