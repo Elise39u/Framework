@@ -1,5 +1,7 @@
 <?php
 
+require(ROOT . "model/playerStatModel.php");
+
 function Checker($firstname, $prefire, $lastname, $email, $username, $password) {
      $db = openDatabaseConnection();
 
@@ -40,5 +42,7 @@ function Register($firstname, $prefire, $lastname, $email, $username, $password)
 		':password' => $password
 		));
     $_SESSION['username'] = $username;
+    // Make new stats for the player
+    //getAllPlayerStats();
 	$db = null;
 }

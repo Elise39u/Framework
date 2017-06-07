@@ -19,6 +19,20 @@ if (isset($_POST['submit'])) {
 
 function start() {
 	render("home/start");
+    $user = getAllPlayerStats();
+    if (empty($user)) {
+    } else {
+        $_SESSION['atk'] = $user[0]['content'];
+        $_SESSION['def'] = $user[1]['content'];
+        $_SESSION['gold'] = $user[2]['content'];
+        $_SESSION['maxhp'] = $user[3]['content'];
+        $_SESSION['curhp'] = $user[4]['content'];
+        $_SESSION['magic'] = $user[6]['content'];
+        $_SESSION['bankgd'] = $user[9]['content'];
+        $_SESSION['exp'] = $user[10]['content'];
+        $_SESSION['exp_rem'] = $user[11]['content'];
+        $_SESSION['lvl'] = $user[12]['content'];
+    }
 }
 
 function logout() {
