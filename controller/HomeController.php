@@ -33,6 +33,13 @@ function start() {
         $_SESSION['exp_rem'] = $user[11]['content'];
         $_SESSION['lvl'] = $user[12]['content'];
     }
+    $party = getPlayerParty();
+    if (!$_SESSION['party_members']) {
+        $_SESSION['party_members'] = array();
+        foreach ($party as $partymemeber) {
+            $_SESSION['party_members'][] = $partymemeber;
+        }
+    }
 }
 
 function logout() {

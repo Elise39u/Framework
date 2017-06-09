@@ -11,3 +11,18 @@ function getAllPlayerStats() {
     $db = null;
     return $queryExc->fetchAll();
 }
+
+function getPlayerParty() {
+    $db = openDatabaseConnection();
+
+    $query = sprintf("SELECT npc.Name FROM player_party
+      LEFT JOIN npc ON player_party.npc_id=npc.id
+      LEFT JOIN player ON player_party.player_id=player.id
+      where player.Username = :username");
+
+    $queryExc = $db->prepare($query);
+    $queryExc->execute(array(":username" => $_SESSION['username']));
+
+    $db = null;
+    return $queryExc->fetchAll();
+}

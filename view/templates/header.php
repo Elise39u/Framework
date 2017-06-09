@@ -35,5 +35,9 @@
     <!-- Use Sessions to display the npcs on screen -->
     <ul>
         <p class="H1l">Npc`s in your party</p>
-        <!-- Npc`s party comes here -->
+        <?php if(isset($_SESSION['party_members'])) {
+            foreach ($_SESSION['party_members'] as $party_member) {
+                foreach ($party_member as $party) {
+                    echo $party; echo '<br />';
+                }}} ?>
     </ul>
